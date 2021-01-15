@@ -1,0 +1,11 @@
+.icon-link {
+  font-size: 2rem;
+  padding: 0px;
+  right: 0;
+  color: white;
+  transition: all 0.15s ease-in;
+}
+
+.icon-link:hover {
+  color: #2f3542;
+}

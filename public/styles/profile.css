@@ -1,0 +1,38 @@
+.tab-card-header {
+  background: none;
+  border-bottom: 2px solid rgba(116, 125, 140, 0.3);
+}
+/* Default mode */
+.tab-card-header > .nav-tabs {
+  border: none;
+  margin: 0px;
+  justify-content: space-around;
+}
+.tab-card-header > .nav-tabs > li {
+  margin-right: 2px;
+}
+.tab-card-header > .nav-tabs > li > a {
+  border: 0;
+  margin-right: 0;
+  padding: 2px 15px;
+}
+
+.tab-card-header > .nav-tabs > li > a.active {
+  border-bottom: 2px solid #2ed573;
+  margin-top: 1px;
+  color: #2ed573;
+  font-weight: 900;
+  transition: all 0.2s ease-in;
+}
+
+.tab-card-header > .nav-tabs > li > a.show {
+  border-bottom: 1px solid #2ed573;
+  color: #2ed573;
+}
+.tab-card-header > .nav-tabs > li > a:hover {
+  color: #2ed573;
+}
+
+.tab-card-header > .tab-content {
+  padding-bottom: 0;
+}

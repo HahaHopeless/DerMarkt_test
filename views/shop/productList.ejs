@@ -1,0 +1,83 @@
+<% if (prods.length > 0) { %>
+<!-- <div class="productrow"> -->
+<% for (let product of prods) { %>
+
+<div class="productcolumn">
+  <div
+    class="card"
+    style="
+      cursor: pointer;
+      margin-bottom: 2rem;
+      max-width: 80rem;
+      border-radius: 2rem;
+      -webkit-box-shadow: 0px 7px 15px 0px rgba(0, 0, 0, 0.09);
+      box-shadow: 0px 7px 15px 0px rgba(0, 0, 0, 0.09);
+    "
+    onclick="location.href='/productDetails/<%= product.id %>';"
+  >
+    <div
+      class="card-header"
+      style="
+        display: flex;
+        flex-direction: row;
+        align-content: space-around;
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+      "
+    >
+      <a href="#" style="flex: 1"
+        ><h3
+          id="productDescription"
+          style="font-weight: bold; margin-top: 10px"
+        >
+          <%= product.title %>
+        </h3></a
+      >
+      <div>
+        <p style="font-size: 14px">
+          <i class="fa fa-clock-o" style="color: #1e90ff"></i> <%=
+          product.posted_on %>
+        </p>
+        <div style="display: flex; flex-direction: row; float: right">
+          <i class="fa fa-map-marker" style="color: #ff4757"></i>
+          <p style="font-size: 14px; margin-left: 10px; margin-top: -3px">
+            <%= product.postcode %>, <%= product.city %>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-body" style="display: flex; flex-direction: row">
+      <img
+        style="margin-right: 2rem; display: block; height: 15rem; width: 12rem"
+        src="<%= product.imageUrl %>"
+        alt="<%= product.title %>"
+      />
+      <!-- <div
+        style="
+          border-left: 1.5px solid rgba(116, 125, 140, 0.2);
+          height: 12rem;
+          margin-right: 3rem;
+          margin-left: 2rem;
+          margin-top: 1rem;
+        "
+      ></div> -->
+      <!-- <p><%= product.description %></p> -->
+    </div>
+    <div
+      class="card-footer"
+      style="
+        font-weight: bolder;
+        border-bottom-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+      "
+    >
+      <h4 style="font-weight: bold">€ <%= product.price %></h4>
+    </div>
+  </div>
+</div>
+<% } %>
+<!-- </div> -->
+<% } else { %>
+<h3>Oh Snap! No Products Found!</h3>
+<% } %>

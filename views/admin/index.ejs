@@ -1,0 +1,87 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/styles/adminPage.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
+      rel="stylesheet"
+    />
+    <link
+      href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
+      rel="stylesheet"
+    />
+    <!-- Nucleo Icons -->
+    <link href="/styles/nucleo-icons.css" rel="stylesheet" />
+    <link href="/styles/nucleo-svg.css" rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <link href="/styles/font-awesome.css" rel="stylesheet" />
+    <link href="/styles/nucleo-svg.css" rel="stylesheet" />
+    <!-- CSS Files -->
+    <!-- CSS only -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <header role="banner">
+      <h1>Der Markt - <b>Admin</b></h1>
+      <ul class="utilities">
+        <br />
+        <li class="users"><a href="#">My Account</a></li>
+        <li class="logout warn"><a href="">Log Out</a></li>
+      </ul>
+    </header>
+
+    <nav role="navigation">
+      <ul class="main navList">
+        <li class="dashboard active-item listitem">
+          <a href="#pending">Pending</a>
+        </li>
+        <li class="edit listitem"><a href="#">Approved</a></li>
+        <li class="write listitem"><a href="#">All Ad Posts</a></li>
+        <li class="users listitem"><a href="#">Manage Users</a></li>
+      </ul>
+    </nav>
+
+    <main role="main" style="padding: 40px">
+      <%- include('./pendingProductsList.ejs') %>
+    </main>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"
+      integrity="sha512-F5QTlBqZlvuBEs9LQPqc1iZv2UMxcVXezbHzomzS6Df4MZMClge/8+gXrKw2fl5ysdk4rWjR0vKS7NNkfymaBQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(".navList li a").click(function (e) {
+        // e.preventDefault();
+        $("li").removeClass("active-item").addClass("");
+        $(this).parent("li").addClass("active-item");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+.box {
+  padding: 15px;
+  margin: 5%;
+  width: 10rem;
+  background: white;
+  box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  transition: 0.4s all;
+  display: inline-block;
+}
+.box:hover {
+  transform: scale(1);
+  box-shadow: 0 8px 15px 0px rgba(0, 0, 0, 0.55);
+  transform: translate(0px, -5px);
+}
+
+.gradient {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  /* background: #2ecc71; */
+  background: linear-gradient(
+    115deg,
+    rgba(17, 153, 142) 0%,
+    rgba(56, 239, 125) 100%
+  );
+}
+.browse {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .browse {
+  padding-top: 102px;
+}
+
+.loginRegister {
+  align-self: flex-end;
+  flex-direction: row;
+  display: flex;
+  float: right;
+}
+
+.btnSmall {
+  padding: 5px;
+  margin-left: 10px;
+  background: white;
+  box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+  transition: 0.4s all;
+}
+.btnSmall:hover {
+  transform: scale(1);
+
+  transform: translate(0px, -2px);
+}
+.btnSmallText {
+  width: 100%;
+  font-size: 14px;
+}
+
+.text {
+  color: white;
+  font-weight: 100;
+  margin-top: 20px;
+}
+.bold {
+  font-weight: bold;
+}
+
+.linkText {
+  color: white;
+}
+.linkText:hover {
+  color: #2c3e50;
+}
+.linkSeparator {
+  color: white;
+  font-size: 15px;
+  cursor: default;
+}
+.btnText {
+  color: #27ae60;
+}
+.btnText:hover {
+  color: #2ecc71;
+}

@@ -1,0 +1,60 @@
+.productcards {
+  margin-left: 280px;
+  padding: 1px 16px;
+  height: 100%;  
+}
+
+/* Float four columns side by side */
+.productcolumn {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+  margin-bottom: 20px;
+}
+
+.productcard img {
+	max-width:100%;
+}
+
+/* Remove extra left and right margins, due to padding */
+.productrow {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.productrow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 1400px) {
+  .productcolumn {
+    width: 50%;
+  }
+}
+
+/* Responsive columns */
+@media screen and (max-width: 900px) {
+  .productcolumn {
+    width: 100%;
+    display: block;
+  }
+}
+
+/* Style the counter cards */
+.productcard {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #ffffff;
+  height:400px;
+  position:relative;
+
+}
+
+.productcard .productcontainer {
+position: absolute;
+    bottom: 0;
+    left:50%;
+	transform:translate(-50%);
+}

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      href="https://transloadit.edgly.net/releases/uppy/v1.6.0/uppy.min.css"
+      rel="stylesheet"
+    />
+    <link rel="apple-touch-icon" sizes="76x76" href="/logo.png" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
+      rel="stylesheet"
+    />
+    <link
+      href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
+      rel="stylesheet"
+    />
+    <!-- Nucleo Icons -->
+    <link href="/styles/nucleo-icons.css" rel="stylesheet" />
+    <link href="/styles/index.css" rel="stylesheet" />
+    <link href="styles/nucleo-svg.css" rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <link href="/styles/font-awesome.css" rel="stylesheet" />
+    <link href="/styles/nucleo-svg.css" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link href="/styles/argon-design-system.css?v=1.2.0" rel="stylesheet" />
+    <link href="/styles/styles.css" rel="stylesheet" />
+  </head>
+
+  <body class="productDetails_page">
+    <%- include('./header.ejs') %>
+
+    <!-- /////////////////////// -->
+    <!-- Start page -->
+    <form
+      style="padding: 1rem 10rem 10rem"
+      method="POST"
+      action="/add-product"
+      role="form"
+    >
+      <div
+        class="card"
+        style="
+          margin: 1rem 5rem 3rem;
+          border-radius: 2rem;
+          -webkit-box-shadow: 0px 7px 15px 0px rgba(0, 0, 0, 0.09);
+          box-shadow: 0px 7px 15px 0px rgba(0, 0, 0, 0.09);
+        "
+      >
+        <div
+          class="card-header"
+          style="border-top-left-radius: 2rem; border-top-right-radius: 2rem"
+        >
+          <h2><b>Ad Details</b></h2>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <label for="title">
+              <h5>Title of the ad *</h5>
+            </label>
+            <input
+              type="text"
+              class="form-control border"
+              id="title"
+              name="title"
+              required="required"
+            />
+          </div>
+          <div class="form-group">
+            <label for="description">
+              <h5>Description *</h5>
+            </label>
+            <textarea
+              class="form-control border"
+              id="description"
+              name="description"
+              rows="5"
+              placeholder="Add every detail about the ad here..."
+              required="required"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="price">
+              <h5>Price *</h5>
+            </label>
+            <input
+              type="number"
+              class="form-control border"
+              id="price"
+              name="price"
+              placeholder="EUR"
+              required="required"
+            />
+          </div>
+          <label for="exampleFormControlInput1">
+            <h5>Upload Images *</h5>
+          </label>
+          <input
+            type="file"
+            class="form-control border"
+            id="img"
+            name="img"
+            placeholder="Select image"
+            accept="image/*"
+            required="required"
+          />
+        </div>
+      </div>
+      <div
+        class="card"
+        style="
+          margin: 1rem 5rem 3rem;
+          border-radius: 2rem;
+          -webkit-box-shadow: 0px 7px 15px 0px rgba(0, 0, 0, 0.09);
+          box-shadow: 0px 7px 15px 0px rgba(0, 0, 0, 0.09);
+        "
+      >
+        <div
+          class="card-header"
+          style="border-top-left-radius: 2rem; border-top-right-radius: 2rem"
+        >
+          <h2><b>Categorization</b></h2>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <label for="category">
+              <h5>Category *</h5>
+            </label>
+            <select
+              class="form-control border"
+              id="category"
+              name="category"
+              required="required"
+            >
+              <option>Electronics</option>
+              <option>Automotive</option>
+              <option>Furniture</option>
+              <option>Services</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div
+        class="card"
+        style="
+          margin: 1rem 5rem 3rem;
+          border-radius: 2rem;
+          -webkit-box-shadow: 0px 7px 15px 0px rgba(0, 0, 0, 0.09);
+          box-shadow: 0px 7px 15px 0px rgba(0, 0, 0, 0.09);
+        "
+      >
+        <div
+          class="card-header"
+          style="border-top-left-radius: 2rem; border-top-right-radius: 2rem"
+        >
+          <h2><b>Address</b></h2>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <label for="plz">
+              <h5>Postcode *</h5>
+            </label>
+            <div style="display: flex; flex-direction: row">
+              <input
+                style="max-width: 10rem; margin-right: 1rem"
+                type="number"
+                class="form-control border"
+                id="plz"
+                name="plz"
+                placeholder="PLZ"
+                required="required"
+              />
+              <input
+                type="text"
+                class="form-control border"
+                id="city"
+                name="city"
+                placeholder="City"
+                required="required"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="streetNr">
+              <h5>Street Nr.</h5>
+            </label>
+            <input
+              type="text"
+              class="form-control border"
+              id="streetNr"
+              name="streetNr"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="card"
+        style="
+          margin: 1rem 5rem 3rem;
+          border-radius: 2rem;
+          -webkit-box-shadow: 0px 7px 15px 0px rgba(0, 0, 0, 0.09);
+          box-shadow: 0px 7px 15px 0px rgba(0, 0, 0, 0.09);
+        "
+      >
+        <div
+          class="card-header"
+          style="border-top-left-radius: 2rem; border-top-right-radius: 2rem"
+        >
+          <h2><b>Contact Details</b></h2>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <label for="name">
+              <h5>Name *</h5>
+            </label>
+            <input
+              type="text"
+              class="form-control border"
+              id="name"
+              name="name"
+              required="required"
+            />
+          </div>
+          <div class="form-group">
+            <label for="phone">
+              <h5>Phone *</h5>
+            </label>
+            <input
+              type="number"
+              class="form-control border"
+              id="phone"
+              name="phone"
+              required="required"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="card"
+        style="
+          margin: 1rem 5rem 3rem;
+          border-radius: 2rem;
+          -webkit-box-shadow: 0px 7px 15px 0px rgba(0, 0, 0, 0.09);
+          box-shadow: 0px 7px 15px 0px rgba(0, 0, 0, 0.09);
+        "
+      >
+        <div
+          class="card-header"
+          style="border-top-left-radius: 2rem; border-top-right-radius: 2rem"
+        >
+          <h2><b>Specs</b></h2>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <label for="color">
+              <h5>Color *</h5>
+            </label>
+            <select
+              class="form-control border"
+              id="color"
+              name="color"
+              required="required"
+            >
+              <option>Black</option>
+              <option>White</option>
+              <option>Silver</option>
+              <option>Red</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="condition">
+              <h5>Condition *</h5>
+            </label>
+            <select
+              class="form-control border"
+              id="condition"
+              name="condition"
+              required="required"
+            >
+              <option>New</option>
+              <option>As-new</option>
+              <option>Used</option>
+              <option>Damaged</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: center; margin-top: 3rem">
+        <button
+          style="width: 50rem; height: 4rem; border-radius: 2rem"
+          type="submit"
+          class="btn btn btn-outline-primary"
+        >
+          Post AD
+        </button>
+      </div>
+    </form>
+    <!-- End page -->
+    <%- include('./footer.ejs') %>
+    <!-- /////////////////////// -->
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      function postData() {
+        var title = document.getElementById("title").value;
+        var description = document.getElementById("description").value;
+        var price = document.getElementById("price").value;
+        var category = document.getElementById("category").value;
+        var plz = document.getElementById("plz").value;
+        var city = document.getElementById("city").value;
+        var streetNr = document.getElementById("streetNr").value;
+        var name = document.getElementById("name").value;
+        var phone = document.getElementById("phone").value;
+        console.log(
+          `
+          title : ${title}, 
+          description : ${description}, 
+          price: ${price}, 
+          plz: ${plz}, 
+          city: ${city}, 
+          streetNr: ${streetNr}, 
+          name: ${name}, 
+          phone: ${phone}, 
+          `
+        );
+      }
+    </script>
+  </body>
+</html>
