@@ -22,7 +22,7 @@ module.exports = class userAccounts {
 
   static login(username, password) {
     return db.execute(
-      "SELECT * FROM accounts WHERE username = ? AND password = ?",
+      "SELECT * FROM accounts WHERE email = ? AND password = ?",
       [username, password]
     );
   }
